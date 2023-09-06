@@ -1,4 +1,9 @@
-import { description } from "./module";
+const swap = (arg1, arg2) => {
+  return [arg2, arg1];
+};
 
-console.log("This is your playground, experiment with TS code and check the console");
-console.log(description);
+let age: number, occupation: string;
+
+[occupation, age] = swap(39, "Placement officer");
+console.log("Occupation: ", occupation);
+console.log("Age: ", age);
