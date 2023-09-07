@@ -1,4 +1,4 @@
-//EJERCICIO 3 ---- PENDIENTE EL EXTRA
+//EJERCICIO 3 ---- No comprendo que son las guardas y falta la parte extra con el "is"
 
 interface User {
   name: string;
@@ -30,9 +30,19 @@ const users: User[] = [
   },
 ];
 
-const logUser = ({ name, age, occupation, subject }: User) => {
-  const extraInfo = occupation ?? subject ?? "";
-  console.log(`  - ${name}, ${age}, ${extraInfo}`);
+const logUser = (user: User) => {
+  let extraInfo: string;
+  if (user.occupation) {
+    extraInfo = user.occupation;
+  } else {
+    extraInfo = user.subject;
+  }
+  console.log(`  - ${user.name}, ${user.age}, ${extraInfo}`);
 };
+
+// const logUser = ({ name, age, occupation, subject }: User) => {
+//   const extraInfo = occupation ?? subject ?? "";
+//   console.log(`  - ${name}, ${age}, ${extraInfo}`);
+// };
 
 users.forEach(logUser);
