@@ -1,11 +1,20 @@
 //EJERCICIO 2
 
-interface User {
+interface Teacher {
   name: string;
   age: number;
   subject?: string;
   occupation?: string;
 }
+
+interface Student {
+  name: string;
+  age: number;
+  subject?: string;
+  occupation?: string;
+}
+
+type User = Teacher | Student;
 
 const users: User[] = [
   {

@@ -1,11 +1,20 @@
-//EJERCICIO 3 ---- No comprendo que son las guardas y falta la parte extra con el "is"
+//EJERCICIO 3
 
-interface User {
+interface Teacher {
+  name: string;
+  age: number;
+  occupation?: string;
+  subject?: string;
+}
+
+interface Student {
   name: string;
   age: number;
   subject?: string;
   occupation?: string;
 }
+
+type User = Teacher | Student;
 
 const users: User[] = [
   {
@@ -31,7 +40,7 @@ const users: User[] = [
 ];
 
 const logUser = (user: User) => {
-  let extraInfo: string;
+  let extraInfo: any;
   if (user.occupation) {
     extraInfo = user.occupation;
   } else {
@@ -39,10 +48,5 @@ const logUser = (user: User) => {
   }
   console.log(`  - ${user.name}, ${user.age}, ${extraInfo}`);
 };
-
-// const logUser = ({ name, age, occupation, subject }: User) => {
-//   const extraInfo = occupation ?? subject ?? "";
-//   console.log(`  - ${name}, ${age}, ${extraInfo}`);
-// };
 
 users.forEach(logUser);
